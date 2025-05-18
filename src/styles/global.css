@@ -1,31 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  /* Dark theme colors */
-  --color-primary-50: oklch(0.25 0.02 220);
-  --color-primary-100: oklch(0.30 0.03 220);
-  --color-primary-200: oklch(0.35 0.05 220);
-  --color-primary-300: oklch(0.40 0.07 220);
-  --color-primary-400: oklch(0.45 0.09 220);
-  --color-primary-500: oklch(0.50 0.11 220);
-  --color-primary-600: oklch(0.55 0.13 220);
-  --color-primary-700: oklch(0.60 0.15 220);
-  --color-primary-800: oklch(0.65 0.17 220);
-  --color-primary-900: oklch(0.70 0.19 220);
+  /* New color scheme - deeper blues and purples for better contrast */
+  --color-primary-50: oklch(0.97 0.03 250);
+  --color-primary-100: oklch(0.92 0.05 250);
+  --color-primary-200: oklch(0.87 0.07 250);
+  --color-primary-300: oklch(0.82 0.09 250);
+  --color-primary-400: oklch(0.77 0.11 250);
+  --color-primary-500: oklch(0.72 0.13 250);
+  --color-primary-600: oklch(0.67 0.15 250);
+  --color-primary-700: oklch(0.62 0.17 250);
+  --color-primary-800: oklch(0.57 0.19 250);
+  --color-primary-900: oklch(0.52 0.21 250);
 
-  /* Dark theme background and text colors */
-  --color-dark-50: oklch(0.15 0 0);
-  --color-dark-100: oklch(0.18 0 0);
-  --color-dark-200: oklch(0.22 0 0);
-  --color-dark-300: oklch(0.25 0 0);
-  --color-dark-400: oklch(0.30 0 0);
-  --color-dark-500: oklch(0.35 0 0);
-  --color-dark-600: oklch(0.40 0 0);
-  --color-dark-700: oklch(0.45 0 0);
-  --color-dark-800: oklch(0.50 0 0);
-  --color-dark-900: oklch(0.55 0 0);
+  /* Accent purple - more saturated */
+  --color-accent-50: oklch(0.97 0.05 280);
+  --color-accent-100: oklch(0.92 0.07 280);
+  --color-accent-200: oklch(0.87 0.09 280);
+  --color-accent-300: oklch(0.82 0.11 280);
+  --color-accent-400: oklch(0.77 0.13 280);
+  --color-accent-500: oklch(0.72 0.15 280);
+  --color-accent-600: oklch(0.67 0.17 280);
+  --color-accent-700: oklch(0.62 0.19 280);
+  --color-accent-800: oklch(0.57 0.21 280);
+  --color-accent-900: oklch(0.52 0.23 280);
+
+  /* Darker background colors */
+  --color-dark-50: oklch(0.10 0.02 250);
+  --color-dark-100: oklch(0.12 0.02 250);
+  --color-dark-200: oklch(0.14 0.02 250);
+  --color-dark-300: oklch(0.16 0.02 250);
+  --color-dark-400: oklch(0.18 0.02 250);
+  --color-dark-500: oklch(0.20 0.02 250);
+  --color-dark-600: oklch(0.30 0.02 250);
+  --color-dark-700: oklch(0.40 0.02 250);
+  --color-dark-800: oklch(0.50 0.02 250);
+  --color-dark-900: oklch(0.60 0.02 250);
+
+  /* Stronger gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-accent-500) 100%);
+  --gradient-dark: linear-gradient(135deg, var(--color-dark-50) 0%, var(--color-dark-100) 100%);
 }
-
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -34,7 +49,7 @@
   font-weight: 400;
 
   color: oklch(0.95 0 0);
-  background-color: var(--color-dark-100);
+  background: var(--gradient-dark);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

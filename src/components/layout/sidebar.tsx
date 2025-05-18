@@ -20,12 +20,14 @@ export const Sidebar = ({
   selectedCollectionId,
 }: SidebarProps) => {
   return (
-    <aside className="border-dark-200 bg-dark-100 flex h-full w-64 flex-col border-r p-4">
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-white">Collections</h2>
+    <aside className="bg-dark-100/80 flex h-full w-72 flex-col p-4 backdrop-blur-sm">
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="from-primary-300 to-accent-300 bg-gradient-to-r bg-clip-text text-lg font-semibold text-transparent">
+          Collections
+        </h2>
         <button
           onClick={onNewCollection}
-          className="bg-dark-200 text-primary-400 hover:bg-dark-300 rounded-full p-2 transition-colors"
+          className="from-primary-500 to-accent-500 shadow-primary-900/20 hover:shadow-primary-900/30 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r text-white shadow-lg transition-all hover:scale-105 active:scale-100"
         >
           <Plus className="h-5 w-5" />
         </button>
@@ -36,18 +38,31 @@ export const Sidebar = ({
           <button
             key={collection.id}
             onClick={() => onCollectionSelect(collection.id)}
-            className={`w-full rounded-lg p-3 text-left transition-colors ${
+            className={`group relative w-full overflow-hidden rounded-lg p-3 text-left transition-all ${
               selectedCollectionId === collection.id
-                ? 'bg-dark-200 text-primary-400'
-                : 'hover:bg-dark-200 text-white'
+                ? 'from-primary-500/20 to-accent-500/20 shadow-primary-900/10 bg-gradient-to-r shadow-lg'
+                : 'hover:bg-dark-200/80'
             }`}
           >
-            <div className="font-medium">{collection.name}</div>
-            {collection.description && (
-              <div className="text-dark-600 mt-1 line-clamp-2 text-sm">
-                {collection.description}
-              </div>
+            {selectedCollectionId === collection.id && (
+              <div className="from-primary-500/10 to-accent-500/10 absolute inset-0 bg-gradient-to-r" />
             )}
+            <div className="relative">
+              <div
+                className={`font-medium ${
+                  selectedCollectionId === collection.id
+                    ? 'from-primary-300 to-accent-300 bg-gradient-to-r bg-clip-text text-transparent'
+                    : 'text-white'
+                }`}
+              >
+                {collection.name}
+              </div>
+              {collection.description && (
+                <div className="text-dark-600 mt-1 text-sm">
+                  {collection.description}
+                </div>
+              )}
+            </div>
           </button>
         ))}
       </div>
