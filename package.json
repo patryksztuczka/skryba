@@ -1,0 +1,35 @@
+{
+  "name": "skryba",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.7",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.27.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "globals": "^16.1.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.0.3"
+  }
+}
